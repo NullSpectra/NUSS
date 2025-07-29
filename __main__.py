@@ -57,11 +57,11 @@ def open_article(articles, index):
     try:
         link = articles[index - 1]
         system = platform.system()
-        if system == "Darwin":  # macOS
+        if system == "Darwin":
             subprocess.run(["open", link], check=False)
         elif system == "Windows":
             subprocess.run(["start", link], shell=True, check=False)
-        else:  # Linux ve diğerleri
+        else:
             subprocess.run(["xdg-open", link], check=False)
         
         read = load_read()
